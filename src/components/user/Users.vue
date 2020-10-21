@@ -17,7 +17,7 @@
                         v-model="queryInfo.query" clearable @clear="getUserList">
                        <el-button slot="append" 
                         icon="el-icon-search"
-                         @ciick="getUserList"></el-button>
+                         @click="getUserList"></el-button>
                     </el-input>    
                 </el-col>
                 <el-col :span="4">
@@ -40,16 +40,16 @@
                     </template>
                 </el-table-column>
                 <el-table-column label="操作" >
-                    <template slot-scope="scope">
+                    <template slot-scope="scope" >
                         <!-- 修改按钮 -->
                         <el-button type="primary" icon="el-icon-edit" 
-                        size="mini" @click="showEditDialog(scope.row.id)"></el-button>
+                        size="mini" @click="showEditDialog(scope.row.id)" class="btn"></el-button>
                        <!-- 删除按钮 -->
                         <el-button type="danger" icon="el-icon-delete" size="mini"
-                        @click="removeUserById(scope.row.id)"></el-button>
+                        @click="removeUserById(scope.row.id)" class="btn"></el-button>
                        <!-- 分配角色 -->
                         <el-tooltip  effect="dark" content="分配角色" placement="top" :enterable="false">
-                            <el-button type="warning" icon="el-icon-setting" size="mini"></el-button>
+                            <el-button type="warning" icon="el-icon-setting" size="mini" class="btn" ></el-button>
                         </el-tooltip>
                     </template>
                 </el-table-column>
@@ -95,7 +95,7 @@
        </el-dialog>
        <!-- 修改用户对话框 -->
        <el-dialog
-          title="提示"
+          title="编辑用户"
           :visible.sync="editDialogVisible"
            width="50%" @close="editDialogCloserd"
            >
@@ -167,6 +167,7 @@ export default{
                 email:'',
                 mobile:''
             },
+            editForm:{},
             //添加表单验证规则
             addFormRules:{
                 username:[
@@ -188,7 +189,7 @@ export default{
                 {validator:checkMobile,trigger:'blur'}
                 ]
             },
-            editForm:{},
+            
             editFormRules:{
                 email:[
                 {required:true,message:'请输入邮箱',trigger:'blur'},
@@ -237,7 +238,7 @@ export default{
               userinfo.mg_state = !userinfo.mg_state
               return this.$message.error('更新用户状态失败')
           }  
-          this.$message.success('更新用户桩体成功')
+          this.$message.success('更新用户状态成功')
         },
         //监听添加用户对话框的关闭事件
         addDialogClosed(){
@@ -255,7 +256,7 @@ export default{
                 if(res.meta.status !== 201){
                     this.$message.error('添加用户失败！')
                 }
-                this.$message.success('添加用户失败！')
+                this.$message.success('添加用户成功！')
                 //隐藏添加用户的对话框
                 this.addDialogVisible = false
                 //重新获取用户的列表数据
@@ -322,11 +323,11 @@ export default{
 
              if (res.meta.status !== 200) {
                 return this.$message.error('删除用户失败')
-            }
+                 }
 
-            this.$message.success('删除用户成功')
-            this.getUserList()
-     }
+              this.$message.success('删除用户成功')
+              this.getUserList()
+            }
     }
 }
 
@@ -334,5 +335,7 @@ export default{
 
 <!--lang="less" scoped 防止组件样式冲突  -->
 <style lang="less" scoped>
-
+    .btn {
+        width: 40px;
+    }
 </style>

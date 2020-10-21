@@ -31,7 +31,8 @@ import {
  Pagination,
  Dialog,
  MessageBox,
- Tag
+ Tag,
+ Tree
 } from 'element-ui'
 Vue.use(Button)
 Vue.use(Form)
@@ -56,6 +57,7 @@ Vue.use(Tooltip)
 Vue.use(Pagination)
 Vue.use(Dialog)
 Vue.use(Tag)
+Vue.use(Tree)
 //进行挂载
 
 Vue.prototype.$message = Message
