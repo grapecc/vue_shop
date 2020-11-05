@@ -1,4 +1,4 @@
-<template>
+ <template>
     <el-container class="home-container">
         <!-- 头部区域 -->
         <el-header>

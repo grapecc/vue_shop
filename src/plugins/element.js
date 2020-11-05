@@ -34,7 +34,8 @@ import {
  Tag,
  Tree,
  Select,
- Option
+ Option,
+ cascader
 } from 'element-ui'
 Vue.use(Button)
 Vue.use(Form)
@@ -62,6 +63,7 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(cascader)
 //进行挂载
 
 Vue.prototype.$message = Message
