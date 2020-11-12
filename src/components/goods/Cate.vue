@@ -311,7 +311,7 @@ export default{
                           }
                         )
                     if(res.meta.status!==200){
-                        return this.$message.error(修改失败)
+                        return this.$message.error('修改失败')
                     }
                    this.editCateDialogVisible = false
             })
