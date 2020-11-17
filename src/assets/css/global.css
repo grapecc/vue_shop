@@ -25,3 +25,12 @@ body,
     height: 200px;
     top: 294px; 
 }
+.el-steps{
+    margin: 15px 0;
+}
+.el-card__title{
+    font-size: 13px;
+}
+.ql-editor{
+height: 300px !important;
+}
