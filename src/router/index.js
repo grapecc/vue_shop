@@ -10,7 +10,8 @@ import Roles from '../components/power/Roles.vue'
 import Cate from '../components/goods/Cate.vue'
 import Params from '../components/goods/Params.vue'
 import list from '../components/goods/List.vue'
-import add from '../components/goods/Add.vue'
+import Add from '../components/goods/Add.vue'
+import Orders from '../components/orders/Orders.vue'
 
 Vue.use(VueRouter)
 //home 里面配置子路由
@@ -29,7 +30,8 @@ const routes = [
       {path:'/categories',component: Cate},
       {path:'/params',component: Params},
       {path:'/goods',component: list},
-      {path:'/goods/add',component: add}
+      {path:'/goods/add',component: Add},
+      {path:'/orders',component: Orders}
     ]
   }
 ]

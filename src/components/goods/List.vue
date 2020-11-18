@@ -18,7 +18,7 @@
                     class="input-with-select"
                     clearable
                     @clear="getGoodsList">
-                       <el-button slot="append" 
+                    <el-button slot="append" 
                         icon="el-icon-search" @click="getGoodsList"></el-button>
                     </el-input>    
                 </el-col>
@@ -60,7 +60,7 @@
             :page-size="queryInfo.pagesize"
             layout="total, sizes, prev, pager, next, jumper"
             :total="total" background>
-          </el-pagination>
+           </el-pagination>
       </el-card>
     </div>
 </template>
