@@ -12,6 +12,7 @@ import Params from '../components/goods/Params.vue'
 import list from '../components/goods/List.vue'
 import Add from '../components/goods/Add.vue'
 import Orders from '../components/orders/Orders.vue'
+import Report from '../components/report/Report.vue'
 
 Vue.use(VueRouter)
 //home 里面配置子路由
@@ -31,7 +32,9 @@ const routes = [
       {path:'/params',component: Params},
       {path:'/goods',component: list},
       {path:'/goods/add',component: Add},
-      {path:'/orders',component: Orders}
+      {path:'/orders',component: Orders},
+      {path:'/reports',component: Report}
+      
     ]
   }
 ]
